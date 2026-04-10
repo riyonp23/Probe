@@ -1,0 +1,24 @@
+node_modules/
+dist/
+build/
+.env
+.env.*
+!.env.example
+.probe/
+*.log
+*.tgz
+.DS_Store
+
+# credentials and private key material
+credentials.json
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+
+# development artifacts
+.claude/
+CLAUDE.md
+PROMPT*.txt

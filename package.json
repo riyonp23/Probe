@@ -1,0 +1,43 @@
+{
+  "name": "probe-cli",
+  "version": "1.0.0",
+  "description": "Probe indexes any codebase into a local vector database, then lets you ask natural language questions about the code. It uses AST-aware chunking to preserve function and class boundaries, embeds code locally with no external API, and streams answers from your chosen AI provider with exact file and line citations.",
+  "bin": {
+    "probe": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
+    "@google/generative-ai": "^0.24.1",
+    "@huggingface/transformers": "^4.0.1",
+    "@mistralai/mistralai": "^2.2.0",
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "glob": "^11.0.0",
+    "groq-sdk": "^1.1.2",
+    "openai": "^6.34.0",
+    "ora": "^5.4.1",
+    "vectra": "^0.12.3"
+  },
+  "optionalDependencies": {
+    "tree-sitter": "^0.21.1",
+    "tree-sitter-javascript": "0.21.4",
+    "tree-sitter-python": "0.21.0",
+    "tree-sitter-typescript": "0.21.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

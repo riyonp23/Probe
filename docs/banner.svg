@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="900" height="280">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e17"/>
+      <stop offset="50%" style="stop-color:#0d1424"/>
+      <stop offset="100%" style="stop-color:#0a1628"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00bcd4"/>
+      <stop offset="50%" style="stop-color:#26c6da"/>
+      <stop offset="100%" style="stop-color:#4dd0e1"/>
+    </linearGradient>
+    <filter id="diamondGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <pattern id="dots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.7" fill="#1a3a4a" opacity="0.35"/>
+    </pattern>
+    <style>
+      @keyframes dashMove { to { stroke-dashoffset: -20; } }
+      @keyframes nodeGlow { 0%,100% { opacity:0.5; } 50% { opacity:1; } }
+      @keyframes scanLine { 0% { transform:translateY(0); opacity:0; } 10% { opacity:0.5; } 90% { opacity:0.5; } 100% { transform:translateY(130px); opacity:0; } }
+      .dash-animate { animation: dashMove 1s linear infinite; }
+      .pulse-node { animation: nodeGlow 2s ease-in-out infinite; }
+      .scan-line { animation: scanLine 3.5s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect width="900" height="280" fill="url(#bg)" rx="10"/>
+  <rect width="900" height="280" fill="url(#dots)" rx="10"/>
+  <rect x="1" y="1" width="898" height="278" fill="none" stroke="#1a3a4a" stroke-width="1" rx="10" opacity="0.4"/>
+  <rect x="0" y="0" width="900" height="2.5" fill="url(#accent)" rx="2" opacity="0.7"/>
+
+  <!-- LEFT: Code panel -->
+  <rect x="36" y="32" width="260" height="216" fill="#0d1a2a" rx="8" stroke="#1a3a4a" stroke-width="1" opacity="0.8"/>
+
+  <!-- window dots -->
+  <circle cx="54" cy="48" r="4.5" fill="#ff5f57" opacity="0.75"/>
+  <circle cx="68" cy="48" r="4.5" fill="#ffbd2e" opacity="0.75"/>
+  <circle cx="82" cy="48" r="4.5" fill="#28ca42" opacity="0.75"/>
+  <text x="100" y="52" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="9.5" fill="#3a5a6a">auth.ts</text>
+
+  <!-- scan line -->
+  <rect class="scan-line" x="44" y="64" width="244" height="1.5" fill="#00bcd4" opacity="0.25" rx="1"/>
+
+  <!-- code lines -->
+  <text x="52" y="82" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="11">
+    <tspan fill="#c792ea">export </tspan><tspan fill="#c792ea">async </tspan><tspan fill="#82aaff">function</tspan>
+  </text>
+  <text x="52" y="98" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="11">
+    <tspan fill="#eeffff">authenticate(</tspan>
+  </text>
+  <text x="64" y="114" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="11">
+    <tspan fill="#eeffff">user: </tspan><tspan fill="#ffcb6b">User</tspan><tspan fill="#eeffff">, token: </tspan><tspan fill="#ffcb6b">string</tspan>
+  </text>
+  <text x="52" y="130" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="11">
+    <tspan fill="#eeffff">): </tspan><tspan fill="#ffcb6b">Promise</tspan><tspan fill="#89ddff">&lt;</tspan><tspan fill="#ffcb6b">boolean</tspan><tspan fill="#89ddff">&gt;</tspan><tspan fill="#eeffff"> {</tspan>
+  </text>
+  <text x="64" y="146" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="11">
+    <tspan fill="#c792ea">const </tspan><tspan fill="#eeffff">valid = </tspan><tspan fill="#c792ea">await </tspan><tspan fill="#82aaff">verify</tspan><tspan fill="#eeffff">(</tspan>
+  </text>
+  <text x="76" y="162" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="11">
+    <tspan fill="#eeffff">token, user.</tspan><tspan fill="#82aaff">secret</tspan>
+  </text>
+  <text x="64" y="178" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#eeffff">);</text>
+  <text x="64" y="194" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="11">
+    <tspan fill="#c792ea">return </tspan><tspan fill="#eeffff">valid;</tspan>
+  </text>
+  <text x="52" y="210" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="11" fill="#eeffff">}</text>
+
+  <!-- chunk highlight -->
+  <rect x="46" y="72" width="244" height="146" fill="none" stroke="#00bcd4" stroke-width="1.5" rx="4" opacity="0.45" stroke-dasharray="6 3" class="dash-animate"/>
+  <rect x="206" y="68" width="80" height="15" fill="#00bcd4" rx="3" opacity="0.12"/>
+  <text x="214" y="79" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="8.5" fill="#00bcd4" opacity="0.85">◈ chunk #14</text>
+
+  <!-- CENTER: Branding -->
+  <text x="480" y="82" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="24" fill="#00bcd4" text-anchor="middle" filter="url(#diamondGlow)" opacity="0.85">◈</text>
+  <text x="480" y="128" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="52" font-weight="800" fill="#e0f7fa" text-anchor="middle" letter-spacing="10">PROBE</text>
+  <rect x="400" y="140" width="160" height="2" fill="url(#accent)" rx="1" opacity="0.6"/>
+  <text x="480" y="165" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="12.5" fill="#4dd0e1" text-anchor="middle" letter-spacing="4" opacity="0.85">A  CODEBASE  PILOT</text>
+  <text x="480" y="192" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="11.5" fill="#5a7a8a" text-anchor="middle">Index any repo. Ask questions in plain English.</text>
+  <text x="480" y="208" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-size="11.5" fill="#5a7a8a" text-anchor="middle">Get answers with exact file and line citations.</text>
+
+  <!-- terminal prompt -->
+  <g transform="translate(380, 236)">
+    <rect x="-12" y="-14" width="225" height="22" fill="#0a1628" rx="4" stroke="#1a3a4a" stroke-width="0.8"/>
+    <text x="0" y="0" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="10.5" fill="#4dd0e1">$</text>
+    <text x="12" y="0" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="10.5" fill="#5a7a8a">probe ask</text>
+    <text x="82" y="0" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="10.5" fill="#c0d0d8">"how does auth work?"</text>
+    <rect x="240" y="-10" width="1.5" height="12" fill="#00bcd4">
+      <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- RIGHT: Pipeline flow -->
+  <text x="790" y="46" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="8" fill="#2a4a5a" text-anchor="middle" letter-spacing="2.5">PIPELINE</text>
+
+  <!-- node: Walk -->
+  <g transform="translate(790, 72)">
+    <rect x="-32" y="-11" width="64" height="22" fill="#0d1a2a" rx="11" stroke="#1a3a4a" stroke-width="1"/>
+    <text x="0" y="4" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="10" fill="#4dd0e1" text-anchor="middle">walk</text>
+    <circle cx="36" cy="0" r="2.5" fill="#00bcd4" class="pulse-node"/>
+  </g>
+  <line x1="790" y1="83" x2="790" y2="101" stroke="#1a3a4a" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- node: Chunk -->
+  <g transform="translate(790, 112)">
+    <rect x="-32" y="-11" width="64" height="22" fill="#0d1a2a" rx="11" stroke="#1a3a4a" stroke-width="1"/>
+    <text x="0" y="4" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="10" fill="#4dd0e1" text-anchor="middle">chunk</text>
+    <circle cx="36" cy="0" r="2.5" fill="#00bcd4" class="pulse-node" style="animation-delay:0.4s"/>
+  </g>
+  <line x1="790" y1="123" x2="790" y2="141" stroke="#1a3a4a" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- node: Embed -->
+  <g transform="translate(790, 152)">
+    <rect x="-32" y="-11" width="64" height="22" fill="#0d1a2a" rx="11" stroke="#1a3a4a" stroke-width="1"/>
+    <text x="0" y="4" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="10" fill="#4dd0e1" text-anchor="middle">embed</text>
+    <circle cx="36" cy="0" r="2.5" fill="#00bcd4" class="pulse-node" style="animation-delay:0.8s"/>
+  </g>
+  <line x1="790" y1="163" x2="790" y2="181" stroke="#1a3a4a" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- node: Search -->
+  <g transform="translate(790, 192)">
+    <rect x="-32" y="-11" width="64" height="22" fill="#0d1a2a" rx="11" stroke="#1a3a4a" stroke-width="1"/>
+    <text x="0" y="4" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="10" fill="#4dd0e1" text-anchor="middle">search</text>
+    <circle cx="36" cy="0" r="2.5" fill="#00bcd4" class="pulse-node" style="animation-delay:1.2s"/>
+  </g>
+  <line x1="790" y1="203" x2="790" y2="221" stroke="#1a3a4a" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- node: Answer (highlighted) -->
+  <g transform="translate(790, 232)">
+    <rect x="-34" y="-11" width="68" height="22" fill="#00bcd4" rx="11" opacity="0.12"/>
+    <rect x="-34" y="-11" width="68" height="22" fill="none" rx="11" stroke="#00bcd4" stroke-width="1.5"/>
+    <text x="0" y="4" font-family="'SF Mono',Menlo,Consolas,monospace" font-size="10" fill="#4dd0e1" text-anchor="middle" font-weight="bold">answer</text>
+    <circle cx="38" cy="0" r="2.5" fill="#4dd0e1" class="pulse-node" style="animation-delay:1.6s"/>
+  </g>
+</svg>

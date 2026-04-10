@@ -28,7 +28,7 @@ The whole point: you shouldn't have to read an entire unfamiliar codebase just t
 
 ---
 
-## ⚙️ How It Works
+## How It Works
 
 ```
 probe index <path>        →   walks repo, parses code into chunks, embeds locally, stores vectors
@@ -46,7 +46,7 @@ probe ask "question"      →   embeds your question, finds similar chunks, stre
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # clone and build
@@ -72,7 +72,7 @@ probe ask "where are the API routes defined?" --verbose
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -173,7 +173,7 @@ probe specs                     # technical architecture overview
 
 ---
 
-## 🔐 Security
+## Security
 
 API keys are **encrypted at rest** using AES-256-GCM. The encryption key is derived from your machine's fingerprint (`hostname + username + homedir`) via `scrypt` with a per-install random salt, so the credentials file can't be decrypted on a different machine or user account. File permissions are set to `0600` (owner-only) on POSIX systems.
 
@@ -203,7 +203,7 @@ Pick any of these during `probe setup`. Only the selected provider's SDK is load
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component | Technology |
 |---|---|

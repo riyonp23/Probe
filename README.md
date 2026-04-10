@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="#-how-it-works">How It Works</a> · <a href="#-quick-start">Quick Start</a> · <a href="#-architecture">Architecture</a> · <a href="#-security">Security</a> · <a href="#-tech-stack">Tech Stack</a>
+  <a href="#how-it-works">How It Works</a> · <a href="#quick-start">Quick Start</a> · <a href="#architecture">Architecture</a> · <a href="#security">Security</a> · <a href="#tech-stack">Tech Stack</a>
 </p>
 
 ---
